@@ -7,9 +7,9 @@ public class Task {
     public static final Logger log = org.slf4j.LoggerFactory.getLogger(Task.class);
 
     public static void cpuIntensive(int i) {
-       log.info("starting CPU task {}. Thread Info: {}", i, Thread.currentThread());
+//       log.info("starting CPU task {}. Thread Info: {}", i, Thread.currentThread());
        var timeTaken = CommonUtils.timer(() -> findFib(i));
-       log.info("ending CPU task. Time taken: {} ms.", timeTaken);
+//       log.info("ending CPU task. Time taken: {} ms.", timeTaken);
     }
 
     public static long findFib(long input) {

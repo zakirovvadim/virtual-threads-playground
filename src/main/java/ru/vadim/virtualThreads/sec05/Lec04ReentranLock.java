@@ -1,4 +1,4 @@
-package ru.vadim.sec05;
+package ru.vadim.virtualThreads.sec05;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;
@@ -6,11 +6,13 @@ import ru.vadim.util.CommonUtils;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-public class Lec01RaceCondition {
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Lec01RaceCondition.class);
-    public static final List<Integer> list = new ArrayList<>();
-
+public class Lec04ReentranLock {
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Lec04ReentranLock.class);
+    public static final List<Integer> list = new ArrayList<>(); // вместо синхронизации я также могу использовать конкарент лист
+    public static final Lock lock = new ReentrantLock();
     public static void main(String[] args) {
         demo(Thread.ofVirtual());
         CommonUtils.sleep(Duration.ofSeconds(2));
@@ -31,6 +33,13 @@ public class Lec01RaceCondition {
     }
 
     private static void inMemoryTask() {
-        list.add(1);
+        try {
+            lock.lock();
+            list.add(1);
+        } catch (Exception e) {
+            log.error("exception", e);
+        } finally {
+            lock.unlock();
+        }
     }
 }

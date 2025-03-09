@@ -1,4 +1,4 @@
-package ru.vadim.sec02;
+package ru.vadim.virtualThreads.sec02;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;

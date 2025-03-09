@@ -1,4 +1,4 @@
-package ru.vadim.sec05;
+package ru.vadim.virtualThreads.sec05;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;
@@ -7,9 +7,9 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lec02Synchronization {
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Lec02Synchronization.class);
-    public static final List<Integer> list = new ArrayList<>(); // вместо синхронизации я также могу использовать конкарент лист
+public class Lec01RaceCondition {
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Lec01RaceCondition.class);
+    public static final List<Integer> list = new ArrayList<>();
 
     public static void main(String[] args) {
         demo(Thread.ofVirtual());
@@ -30,7 +30,7 @@ public class Lec02Synchronization {
         }
     }
 
-    private static synchronized void inMemoryTask() {
+    private static void inMemoryTask() {
         list.add(1);
-    } //если синхронайз обработка инМемори, то это окей, это быстро, но лучщше использовать для IO операций.
+    }
 }

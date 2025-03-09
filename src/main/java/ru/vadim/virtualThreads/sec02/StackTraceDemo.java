@@ -1,4 +1,4 @@
-package ru.vadim.sec02;
+package ru.vadim.virtualThreads.sec02;
 
 import ru.vadim.util.CommonUtils;
 

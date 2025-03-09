@@ -1,4 +1,4 @@
-package ru.vadim.sec01;
+package ru.vadim.virtualThreads.sec01;
 
 import java.util.concurrent.CountDownLatch;
 /*

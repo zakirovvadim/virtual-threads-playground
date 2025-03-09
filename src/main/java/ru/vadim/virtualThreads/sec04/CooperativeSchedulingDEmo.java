@@ -1,4 +1,4 @@
-package ru.vadim.sec04;
+package ru.vadim.virtualThreads.sec04;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;
@@ -20,13 +20,13 @@ Demo to understand cooperative scheduling
     }
 
 
-10:23:49.906 [virtual-26] INFO ru.vadim.sec04.CooperativeSchedulingDEmo -- thread-1 started ----- 1 начали выполнение первого потока
-10:23:49.928 [virtual-26] INFO ru.vadim.sec04.CooperativeSchedulingDEmo -- thread-1 is printing 0. Thread: VirtualThread[#26]/runnable@ForkJoinPool-1-worker-1 ------- выполняем первый поток
-10:23:49.929 [virtual-27] INFO ru.vadim.sec04.CooperativeSchedulingDEmo -- thread-2 started ------- делаем уступку yield для второго потока
-10:23:49.929 [virtual-27] INFO ru.vadim.sec04.CooperativeSchedulingDEmo -- thread-2 is printing 0. Thread: VirtualThread[#27]/runnable@ForkJoinPool-1-worker-1 -------- выполняем второй поток и попадаем в уступку снова
-10:23:49.930 [virtual-26] INFO ru.vadim.sec04.CooperativeSchedulingDEmo -- thread-1 is printing 1. Thread: VirtualThread[#26]/runnable@ForkJoinPool-1-worker-1 -------- переключились заново на первый поток
-10:23:49.930 [virtual-27] INFO ru.vadim.sec04.CooperativeSchedulingDEmo -- thread-2 is printing 1. Thread: VirtualThread[#27]/runnable@ForkJoinPool-1-worker-1
-10:23:49.930 [virtual-26] INFO ru.vadim.sec04.CooperativeSchedulingDEmo -- thread-1 is printing 2. Thread: VirtualThread[#26]/runnable@ForkJoinPool-1-worker-1
+10:23:49.906 [virtual-26] INFO ru.vadim.virtualThreads.sec04.CooperativeSchedulingDEmo -- thread-1 started ----- 1 начали выполнение первого потока
+10:23:49.928 [virtual-26] INFO ru.vadim.virtualThreads.sec04.CooperativeSchedulingDEmo -- thread-1 is printing 0. Thread: VirtualThread[#26]/runnable@ForkJoinPool-1-worker-1 ------- выполняем первый поток
+10:23:49.929 [virtual-27] INFO ru.vadim.virtualThreads.sec04.CooperativeSchedulingDEmo -- thread-2 started ------- делаем уступку yield для второго потока
+10:23:49.929 [virtual-27] INFO ru.vadim.virtualThreads.sec04.CooperativeSchedulingDEmo -- thread-2 is printing 0. Thread: VirtualThread[#27]/runnable@ForkJoinPool-1-worker-1 -------- выполняем второй поток и попадаем в уступку снова
+10:23:49.930 [virtual-26] INFO ru.vadim.virtualThreads.sec04.CooperativeSchedulingDEmo -- thread-1 is printing 1. Thread: VirtualThread[#26]/runnable@ForkJoinPool-1-worker-1 -------- переключились заново на первый поток
+10:23:49.930 [virtual-27] INFO ru.vadim.virtualThreads.sec04.CooperativeSchedulingDEmo -- thread-2 is printing 1. Thread: VirtualThread[#27]/runnable@ForkJoinPool-1-worker-1
+10:23:49.930 [virtual-26] INFO ru.vadim.virtualThreads.sec04.CooperativeSchedulingDEmo -- thread-1 is printing 2. Thread: VirtualThread[#26]/runnable@ForkJoinPool-1-worker-1
  */
 public class CooperativeSchedulingDEmo {
 

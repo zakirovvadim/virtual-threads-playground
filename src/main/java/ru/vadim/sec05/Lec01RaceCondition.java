@@ -1,4 +1,4 @@
-package ru.vadim.lec05;
+package ru.vadim.sec05;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;

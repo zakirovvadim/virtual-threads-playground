@@ -1,11 +1,9 @@
-package ru.vadim.lec05;
+package ru.vadim.sec05;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /*
@@ -17,6 +15,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Lec03SynchronizationWithIO {
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(Lec03SynchronizationWithIO.class);
     public static final CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>(); // вместо синхронизации я также могу использовать конкарент лист
+    static {
+        System.setProperty("jdk.tracePinnedThreads", "chart"); // свойство которое позволяет проверять, нет ли в коде или в библиотеках зависших (pinned) виртуальных потоков, второй аргумент full - вернет более развернутую ошибку, chart  - укороченную
+    }
 
     public static void main(String[] args) {
         Runnable r = () -> log.info("*** Test Message ****");

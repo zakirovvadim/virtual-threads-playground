@@ -1,4 +1,4 @@
-package ru.vadim.lec05;
+package ru.vadim.sec05;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;
@@ -32,5 +32,5 @@ public class Lec02Synchronization {
 
     private static synchronized void inMemoryTask() {
         list.add(1);
-    }
+    } //если синхронайз обработка инМемори, то это окей, это быстро, но лучщше использовать для IO операций.
 }

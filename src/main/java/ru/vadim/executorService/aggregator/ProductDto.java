@@ -1,4 +1,4 @@
-package ru.vadim.executorService.sec07.aggregator;
+package ru.vadim.executorService.aggregator;
 
 public record ProductDto(int id,
                          String description,

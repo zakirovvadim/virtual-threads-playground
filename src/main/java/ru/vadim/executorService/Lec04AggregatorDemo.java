@@ -1,9 +1,9 @@
-package ru.vadim.executorService.sec07;
+package ru.vadim.executorService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.vadim.executorService.sec07.aggregator.AggreagatorService;
-import ru.vadim.executorService.sec07.aggregator.ProductDto;
+import ru.vadim.executorService.aggregator.AggreagatorService;
+import ru.vadim.executorService.aggregator.ProductDto;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;

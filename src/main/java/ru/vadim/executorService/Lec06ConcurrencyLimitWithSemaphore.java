@@ -1,8 +1,8 @@
-package ru.vadim.executorService.sec07;
+package ru.vadim.executorService;
 
 import org.slf4j.Logger;
-import ru.vadim.executorService.sec07.concurrencyLimit.ConcurrencyLimiter;
-import ru.vadim.executorService.sec07.exetranlservice.Client;
+import ru.vadim.executorService.concurrencyLimit.ConcurrencyLimiter;
+import ru.vadim.executorService.exetranlservice.Client;
 
 import java.util.concurrent.Executors;
 

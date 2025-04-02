@@ -1,4 +1,4 @@
-package ru.vadim.executorService.sec07.concurrencyLimit;
+package ru.vadim.executorService.concurrencyLimit;
 
 import org.slf4j.Logger;
 

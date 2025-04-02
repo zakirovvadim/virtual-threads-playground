@@ -1,4 +1,4 @@
-package ru.vadim.executorService.sec07;
+package ru.vadim.virtualThreads.sec08;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,9 +7,9 @@ import ru.vadim.util.CommonUtils;
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
 
-public class Lec08SimpleCompletableFuture {
+public class Lec01SimpleCompletableFuture {
 
-    public static final Logger log = LoggerFactory.getLogger(Lec08SimpleCompletableFuture.class);
+    public static final Logger log = LoggerFactory.getLogger(Lec01SimpleCompletableFuture.class);
 
     public static void main(String[] args) {
         log.info("main Starts");

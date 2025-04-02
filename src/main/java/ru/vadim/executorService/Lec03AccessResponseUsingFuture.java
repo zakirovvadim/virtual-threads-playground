@@ -1,8 +1,8 @@
-package ru.vadim.executorService.sec07;
+package ru.vadim.executorService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.vadim.executorService.sec07.exetranlservice.Client;
+import ru.vadim.executorService.exetranlservice.Client;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;

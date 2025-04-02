@@ -1,6 +1,6 @@
-package ru.vadim.executorService.sec07.aggregator;
+package ru.vadim.executorService.aggregator;
 
-import ru.vadim.executorService.sec07.exetranlservice.Client;
+import ru.vadim.executorService.exetranlservice.Client;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;

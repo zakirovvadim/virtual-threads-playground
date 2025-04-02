@@ -1,4 +1,4 @@
-package ru.vadim.executorService.sec07.exetranlservice;
+package ru.vadim.virtualThreads.sec08.exetranlservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package ru.vadim.executorService.sec07;
+package ru.vadim.executorService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

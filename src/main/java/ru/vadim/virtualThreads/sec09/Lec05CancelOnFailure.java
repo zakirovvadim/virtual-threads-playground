@@ -2,34 +2,31 @@ package ru.vadim.virtualThreads.sec09;
 
 import org.slf4j.Logger;
 import ru.vadim.util.CommonUtils;
-import ru.vadim.virtualThreads.sec08.Lec08ThenCombine;
 
 import java.time.Duration;
-import java.time.Instant;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.StructuredTaskScope;
 import java.util.concurrent.ThreadLocalRandom;
 
 // StructuredTaskScope нужен для выполнения одной задачи по частям, где если не выполнится одна задача, можно остановить другие.
-// В данном примере, успех или падение с ошибкой
-public class Lec04SuccessOrFailure {
+// ShutdownOnFailure при добавлении отслеживает статус, и отменяет другие при фейлах
+public class Lec05CancelOnFailure {
 
-    public static final Logger log = org.slf4j.LoggerFactory.getLogger(Lec04SuccessOrFailure.class.getName());
+    public static final Logger log = org.slf4j.LoggerFactory.getLogger(Lec05CancelOnFailure.class.getName());
 
     public static void main(String[] args) {
-        try(var taskScope = new StructuredTaskScope<>()) {
-            StructuredTaskScope.Subtask<String> subTask1 = taskScope.fork(Lec04SuccessOrFailure::getS7);
-            StructuredTaskScope.Subtask<String> subTask2 = taskScope.fork(Lec04SuccessOrFailure::failingTask);
+        try(var taskScope = new StructuredTaskScope.ShutdownOnFailure()) {
+            StructuredTaskScope.Subtask<String> subTask1 = taskScope.fork(Lec05CancelOnFailure::getS7);
+            StructuredTaskScope.Subtask<String> subTask2 = taskScope.fork(Lec05CancelOnFailure::failingTask);
 
             taskScope.join(); //дожидаемся результата
+            taskScope.throwIfFailed(ex -> new RuntimeException("something went wrong")); // можем в случае падения одной из таск,выдать исключение
 //            taskScope.joinUntil(Instant.now().plusMillis(1500));
 
             log.info("subtask1 state: {}", subTask1.state());
             log.info("subtask2 state: {}", subTask2.state());
 
-            log.info("subtask1 result: {}", subTask1.get());
-            log.info("subtask2 result: {}", subTask2.get());
+//            log.info("subtask1 result: {}", subTask1.get());
+//            log.info("subtask2 result: {}", subTask2.get());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
